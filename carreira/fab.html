@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maria Carolina - Experiência na Força Aérea Brasileira">
+    <title>Força Aérea Brasileira - Maria Carolina</title>
+    
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="../icon/notebook.png" type="image/png">
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .page-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 160px 40px 80px;
+        }
+        
+        .voltar {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .voltar:hover {
+            color: #000;
+            gap: 12px;
+        }
+        
+        .empresa-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .empresa-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+        }
+        
+        .empresa-icon img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .empresa-header h1 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+        
+        .empresa-header .local {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        
+        .empresa-header .periodo-geral {
+            color: #333;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .cargo-section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background: #fafafa;
+            border-left: 4px solid #333;
+        }
+        
+        .cargo-section h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 5px;
+        }
+        
+        .cargo-section .cargo-periodo {
+            color: #666;
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .cargo-section h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+            margin: 20px 0 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cargo-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .cargo-section li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.7;
+        }
+        
+        .cargo-section li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .tecnologias {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .tecnologias span {
+            background: #333;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        @media (max-width: 768px) {
+            .page-content {
+                padding: 140px 20px 60px;
+            }
+            
+            .empresa-header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .cargo-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Fixo -->
+    <header>
+        <div class="menu">
+            <div class="logo">
+                <p>MARIA CAROLINA PEREIRA DE SALES</p>
+            </div>
+            <div class="cv-download">
+                <a href="../docs/CV-MARIA-CAROLINA-PT.pdf" target="_blank" title="Baixar Currículo em Português">
+                    <img src="../icon/cv.png" alt="CV Português">
+                    <span>PT</span>
+                </a>
+                <a href="../docs/CV-MARIA-CAROLINA-EN.pdf" target="_blank" title="Baixar Currículo em Inglês">
+                    <img src="../icon/cv.png" alt="CV English">
+                    <span>EN</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#sobre">SOBRE</a></li>
+                    <li><a href="../index.html#competencias">COMPETÊNCIAS</a></li>
+                    <li><a href="../index.html#educacao">EDUCAÇÃO</a></li>
+                    <li><a href="../index.html#carreira">CARREIRA</a></li>
+                    <li><a href="../index.html#contato">CONTATO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="page-content">
+        <a href="../index.html#carreira" class="voltar">← Voltar para Carreira</a>
+        
+        <div class="empresa-header">
+            <div class="empresa-icon">
+                <img src="../icon/aeronave.png" alt="Força Aérea Brasileira">
+            </div>
+            <h1>Força Aérea Brasileira</h1>
+            <p class="local">Centro de Computação da Aeronáutica de São José dos Campos</p>
+            <p class="local">São José dos Campos/SP</p>
+            <p class="periodo-geral">Janeiro 2022 - Atual</p>
+        </div>
+        
+        <!-- Cargo 1: Primeiro-Tenente -->
+        <div class="cargo-section">
+            <h2>Primeiro-Tenente – Analista de Sistemas</h2>
+            <p class="cargo-periodo">Agosto 2025 - Atual</p>
+            
+            <h3>Principais Atividades</h3>
+            <ul>
+                <li>Scrum Master em projetos de TI utilizando metodologias ágeis (Scrum/Kanban)</li>
+                <li>Coordenação de equipes para desenvolvimento e entrega de soluções tecnológicas</li>
+                <li>Análise de requisitos e documentações estratégicas</li>
+            </ul>
+            
+            <h3>Tecnologias e Metodologias</h3>
+            <div class="tecnologias">
+                <span>Scrum</span>
+                <span>Kanban</span>
+                <span>Gestão Ágil</span>
+                <span>GitLab</span>
+            </div>
+        </div>
+        
+        <!-- Cargo 2: Segundo-Tenente -->
+        <div class="cargo-section">
+            <h2>Segundo-Tenente – Analista de Sistemas</h2>
+            <p class="cargo-periodo">Setembro 2022 - Agosto 2025</p>
+            
+            <h3>Principais Atividades</h3>
+            <ul>
+                <li>Gestão e execução de projetos de TI utilizando metodologias ágeis (Scrum/Kanban)</li>
+                <li>Coordenação de equipes para desenvolvimento e entrega de soluções tecnológicas</li>
+                <li>Análise de requisitos e documentações estratégicas</li>
+            </ul>
+            
+            <h3>Tecnologias e Metodologias</h3>
+            <div class="tecnologias">
+                <span>Scrum</span>
+                <span>Kanban</span>
+                <span>C++</span>
+                <span>Python</span>
+                <span>Lua</span>
+                <span>GitLab</span>
+            </div>
+        </div>
+        
+        <!-- Cargo 3: Aspirante a Oficial -->
+        <div class="cargo-section">
+            <h2>Aspirante a Oficial – Analista de Sistemas</h2>
+            <p class="cargo-periodo">Janeiro 2022 - Setembro 2022</p>
+            
+            <h3>Principais Atividades</h3>
+            <ul>
+                <li>Participação no projeto de desenvolvimento de simuladores de voo</li>
+                <li>Apoio na análise de requisitos, desenvolvimento de hardware e software para o simulador</li>
+            </ul>
+            
+            <h3>Tecnologias e Metodologias</h3>
+            <div class="tecnologias">
+                <span>C++</span>
+                <span>Python</span>
+                <span>Lua</span>
+                <span>Simuladores</span>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="copyright">
+            <p>© 2024, Maria Carolina Pereira de Sales. Todos os direitos reservados.<br>
+            All Rights Reserved. Desenvolvido por MCPS.</p>
+        </div>
+    </footer>
+</body>
+</html>

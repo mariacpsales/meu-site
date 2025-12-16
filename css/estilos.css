@@ -1,0 +1,837 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Header e Menu - mantendo design atual */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+  padding: 20px 0;
+}
+
+.menu {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* Ícones de download do CV no menu */
+.cv-download {
+  position: fixed;
+  right: 30px;
+  top: 25px;
+  display: flex;
+  gap: 20px;
+  z-index: 1002;
+}
+
+.cv-download a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.cv-download a:hover {
+  transform: translateY(-3px);
+}
+
+.cv-download img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.cv-download span {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 3px;
+  color: #333;
+}
+
+.logo {
+  text-align: center;
+  padding: 10px 0 20px;
+}
+
+.logo p {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #000;
+  letter-spacing: 2px;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  gap: 5px;
+}
+
+.menu li {
+  margin: 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #000;
+  padding: 8px 20px;
+  display: block;
+  font-weight: 400;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid transparent;
+}
+
+.menu a:hover {
+  border-bottom: 2px solid #000;
+}
+
+/* Hamburger Menu - só aparece no mobile */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 2px;
+  background: #000;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Banners - mantendo altura original no desktop */
+.panel, .panel2 {
+  margin-top: 140px;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.banner, .banner2, .banner3, .banner4, .banner5, .banner6 {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.profissao {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px 40px;
+  border: none;
+}
+
+.profissao p {
+  color: #000;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-align: left;
+}
+
+/* Conteúdo Principal */
+.msg, .servicos {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 40px;
+}
+
+.titulo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.titulo > p {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.intro {
+  max-width: 900px;
+  margin: 0 auto 20px;
+}
+
+.intro > p, .intro1 > p {
+  font-size: 1rem;
+  color: #000;
+  text-align: center;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.texto, .texto1 {
+  margin-top: 25px;
+  text-align: justify;
+  line-height: 1.9;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.texto p, .texto1 p {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Página de Contato - Novo Layout */
+.contato-container {
+  display: flex;
+  gap: 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Bloco Esquerdo - Informações */
+.contato-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contato-info h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.contato-info .cidade {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.redes-sociais {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.redes-sociais a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  transition: all 0.3s ease;
+}
+
+.redes-sociais a:hover {
+  background: #333;
+  transform: translateY(-3px);
+}
+
+.redes-sociais a:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.redes-sociais img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+/* Bloco Direito - Formulário */
+.contato-form {
+  flex: 1;
+}
+
+.contato-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 15px;
+  border: none;
+  background: #f5f5f5;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  background: #eee;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #999;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn-submit {
+  align-self: center;
+  padding: 12px 40px;
+  background: #fff;
+  border: 2px solid #333;
+  border-radius: 30px;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: #333;
+  color: #fff;
+}
+
+/* Responsivo - Contato */
+@media (max-width: 768px) {
+  .contato-container {
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+  }
+  
+  .contato-info {
+    text-align: center;
+  }
+  
+  .contato-info h2 {
+    font-size: 1.5rem;
+  }
+  
+  .redes-sociais {
+    justify-content: center;
+  }
+}
+
+/* Estilo antigo do contato (manter para compatibilidade) */
+.contato {
+  max-width: 700px;
+  margin: 30px auto;
+  text-align: center;
+  line-height: 2;
+}
+
+.contato h2 {
+  color: #000;
+  margin: 20px 0 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contato p {
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* Grid de Competências/Educação/Carreira */
+.center, .centeredu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 30px;
+}
+
+/* Card link wrapper - para cards clicáveis */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.card-link .serv {
+  cursor: pointer;
+}
+
+/* Botão Ver Mais nos cards de carreira */
+.ver-mais {
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.ver-mais span {
+  color: #333;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.card-link:hover .ver-mais span {
+  color: #000;
+  letter-spacing: 2px;
+}
+
+.w33 {
+  width: calc(33.33% - 4px);
+  min-width: 280px;
+}
+
+.serv, .servedu {
+  background: #fff;
+  padding: 25px 20px !important;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  min-height: 420px !important;
+  max-height: 420px !important;
+  height: 420px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start;
+  transition: all 0.3s ease;
+  overflow: hidden !important;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+  margin: 0 !important;
+}
+
+.serv::-webkit-scrollbar, .servedu::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.serv:hover, .servedu:hover {
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  transform: translateY(-5px);
+}
+
+.icone, .iconeedu {
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+}
+
+.icone img, .iconeedu img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.subtitulo, .subtituloedu {
+  margin-bottom: 20px;
+}
+
+.subtitulo p, .subtituloedu p {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.txt, .txtedu {
+  color: #555;
+  line-height: 1.7;
+  font-size: 0.9rem;
+  text-align: justify;
+}
+
+.txt p, .txtedu p {
+  margin: 0 0 10px 0;
+}
+
+/* Período centralizado nos cards de carreira */
+.txt p em {
+  display: block;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.txt p:last-child, .txtedu p:last-child {
+  margin-bottom: 0;
+}
+
+.topicos {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+  margin-top: 15px;
+}
+
+.topicos li {
+  padding: 8px 0;
+  padding-left: 20px;
+  position: relative;
+  font-size: 0.9rem;
+}
+
+.topicos li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Container */
+.container {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.container h3 {
+  color: #000;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.container img {
+  transition: transform 0.3s ease;
+  margin: 0 10px;
+}
+
+.container img:hover {
+  transform: scale(1.15);
+}
+
+.container a {
+  display: inline-block;
+}
+
+/* Footer */
+footer {
+  background: #2c2c2c;
+  color: #fff;
+  padding: 40px 20px;
+  margin-top: 60px;
+}
+
+.copyright {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.copyright p {
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+/* Utilitários */
+.clear {
+  clear: both;
+}
+
+.esquerda {
+  float: left;
+}
+
+/* ============================================
+   RESPONSIVIDADE - TABLET (768px a 1024px)
+   ============================================ */
+@media (max-width: 1024px) {
+  .msg, .servicos {
+    padding: 0 30px;
+  }
+  
+  .w33 {
+    width: calc(50% - 4px);
+  }
+  
+  .panel, .panel2 {
+    height: 400px;
+    margin-top: 150px;
+  }
+  
+  .profissao p {
+    font-size: 1.7rem;
+  }
+}
+
+/* ============================================
+   RESPONSIVIDADE - MOBILE (menor que 768px)
+   ============================================ */
+@media (max-width: 768px) {
+  /* Menu Mobile */
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .logo p {
+    font-size: 1rem;
+    padding-right: 120px;
+    text-align: left;
+  }
+  
+  /* CV download no mobile */
+  .cv-download {
+    right: 60px;
+    top: 18px;
+    gap: 10px;
+  }
+  
+  .cv-download img {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .cv-download span {
+    font-size: 0.6rem;
+  }
+  
+  .menu ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    padding: 10px 0;
+  }
+  
+  .menu ul.active {
+    display: flex;
+  }
+  
+  .menu li {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .menu a {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  /* Banners Mobile */
+  .panel, .panel2 {
+    height: 300px;
+    margin-top: 110px;
+  }
+  
+  .profissao {
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    padding: 15px 20px;
+  }
+  
+  .profissao p {
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+  
+  /* Conteúdo */
+  .msg, .servicos {
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+  
+  .titulo > p {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
+  
+  .intro > p, .intro1 > p {
+    font-size: 0.95rem;
+  }
+  
+  .texto, .texto1 {
+    text-align: left;
+    font-size: 0.9rem;
+  }
+  
+  /* Grid Mobile */
+  .center, .centeredu {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .w33 {
+    width: 100%;
+    float: none;
+  }
+  
+  .serv, .servedu {
+    padding: 30px 20px;
+  }
+  
+  /* Contato Mobile */
+  .contato {
+    padding: 0 20px;
+  }
+  
+  .contato h2 {
+    font-size: 1rem;
+  }
+  
+  .container img[width="40px"] {
+    width: 35px !important;
+    height: 35px !important;
+  }
+}
+
+/* ============================================
+   RESPONSIVIDADE - MOBILE PEQUENO (menor que 480px)
+   ============================================ */
+@media (max-width: 480px) {
+  .logo p {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+  
+  .panel, .panel2 {
+    height: 250px;
+  }
+  
+  .profissao {
+    padding: 12px 15px;
+  }
+  
+  .profissao p {
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+  }
+  
+  .titulo > p {
+    font-size: 1.3rem;
+  }
+  
+  .intro > p, .intro1 > p {
+    font-size: 0.9rem;
+  }
+  
+  .texto p, .texto1 p {
+    font-size: 0.85rem;
+  }
+  
+  .subtitulo p, .subtituloedu p {
+    font-size: 1rem;
+  }
+  
+  .txt, .txtedu {
+    font-size: 0.85rem;
+  }
+  
+  .container img[width="50px"] {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  footer {
+    padding: 30px 20px;
+    margin-top: 40px;
+  }
+  
+  .copyright p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Animações suaves */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.serv, .servedu {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Print styles */
+@media print {
+  header {
+    position: relative;
+  }
+  
+  .menu-toggle {
+    display: none;
+  }
+  
+  .panel, .panel2 {
+    margin-top: 0;
+    height: auto;
+    page-break-after: avoid;
+  }
+  
+  footer {
+    margin-top: 40px;
+  }
+}

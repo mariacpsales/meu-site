@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maria Carolina Pereira de Sales - Analista de Sistemas, Scrum Master, Designer e Desenvolvedora">
+    <title>Maria Carolina - Analista de Sistemas</title>
+    
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="./icon/notebook.png" type="image/png">
+    
+    <style>
+        /* Scroll suave entre seções */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Forçar 4 colunas em Competências e Educação com gap uniforme */
+        .center, .centeredu {
+            display: grid !important;
+            grid-template-columns: repeat(4, 1fr) !important;
+            gap: 30px !important; /* Gap uniforme horizontal e vertical */
+            row-gap: 30px !important; /* Garantir que o gap vertical seja igual */
+            column-gap: 30px !important; /* Garantir que o gap horizontal seja igual */
+        }
+        
+        /* Remover qualquer margin/padding das sections dentro do grid */
+        .center > section.w33,
+        .centeredu > section.w33 {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        /* Altura fixa para todos os cards */
+        .serv, .servedu {
+            height: 420px !important;
+            min-height: 420px !important;
+            max-height: 420px !important;
+            margin: 0 !important;
+        }
+        
+        @media (max-width: 1200px) {
+            .center, .centeredu {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .center, .centeredu {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .center, .centeredu {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        
+        .w33 {
+            width: 100% !important;
+            float: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        /* Cada seção ocupa toda a tela */
+        section:not(.w33) {
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+            padding-top: 140px;
+        }
+        
+        /* Indicador de scroll */
+        .scroll-indicator {
+            position: fixed;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            z-index: 999;
+        }
+        
+        .scroll-indicator a {
+            display: block;
+            width: 12px;
+            height: 12px;
+            margin: 15px 0;
+            background: rgba(0,0,0,0.3);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .scroll-indicator a.active {
+            background: #000;
+            transform: scale(1.5);
+        }
+        
+        .scroll-indicator a:hover {
+            background: #000;
+            transform: scale(1.3);
+        }
+        
+        /* Ajustes para primeira seção (SOBRE) */
+        #sobre {
+            padding-top: 140px;
+            margin-top: 0;
+        }
+        
+        #sobre .section-banner {
+            margin-top: 0;
+        }
+        
+        /* Banner de cada seção */
+        .section-banner {
+            width: 100%;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 40px;
+            z-index: 10;
+        }
+        
+        .section-title h1 {
+            color: #000;
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin: 0;
+        }
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .scroll-indicator {
+                display: none;
+            }
+            
+            section:not(.w33) {
+                min-height: auto;
+                padding-top: 120px;
+            }
+            
+            .section-banner {
+                height: 300px;
+            }
+            
+            .section-title {
+                left: 20px;
+                right: 20px;
+                bottom: 20px;
+                padding: 15px 20px;
+            }
+            
+            .section-title h1 {
+                font-size: 1.3rem;
+                letter-spacing: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Fixo -->
+    <header>
+        <div class="menu">
+            <div class="logo">
+                <p>MARIA CAROLINA PEREIRA DE SALES</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#sobre">SOBRE</a></li>
+                    <li><a href="#competencias">COMPETÊNCIAS</a></li>
+                    <li><a href="#educacao">EDUCAÇÃO</a></li>
+                    <li><a href="#carreira">CARREIRA</a></li>
+                    <li><a href="#contato">CONTATO</a></li>
+                </ul>
+            </nav>
+            <div class="cv-download">
+                <a href="./docs/CV-MARIA-CAROLINA-PT.pdf" target="_blank" title="Baixar Currículo em Português">
+                    <img src="./icon/cv.png" width="35px" height="35px" alt="CV Português">
+                    <span>PT</span>
+                </a>
+                <a href="./docs/CV-MARIA-CAROLINA-EN.pdf" target="_blank" title="Baixar Currículo em Inglês">
+                    <img src="./icon/cv.png" width="35px" height="35px" alt="CV English">
+                    <span>EN</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Indicador de navegação lateral -->
+    <div class="scroll-indicator">
+        <a href="#sobre" title="Sobre"></a>
+        <a href="#competencias" title="Competências"></a>
+        <a href="#educacao" title="Educação"></a>
+        <a href="#carreira" title="Carreira"></a>
+        <a href="#contato" title="Contato"></a>
+    </div>
+    
+    <!-- SEÇÃO 1: SOBRE MIM (Agora é a primeira) -->
+    <section id="sobre">
+        <div class="section-banner" style="background-image: url('./img1/banner1.jpg');">
+            <div class="section-title">
+                <h1>ANALISTA DE SISTEMAS</h1>
+            </div>
+        </div>
+        
+        <div class="msg">
+            <div class="titulo">
+                <p>MARIA CAROLINA PEREIRA DE SALES</p>
+                <div class="intro1">
+                    <p>Analista de Sistemas, Scrum Master, Designer e Desenvolvedora.</p>
+                    <div class="texto1">
+                        <p>Sou uma Analista de Sistemas com expertise em Análise e Desenvolvimento de sistemas e forte conhecimento em desenvolvimento de aplicações. Tenho experiência como Analista Desenvolvedora, Programadora em linguagens de programação como HTML, CSS, C++, Python, Lua, entre outras, estando sempre em busca de novos desafios para aprimorar minhas habilidades e conhecimentos.</p>
+                        
+                        <p>Possuo experiência em Manutenção de Sistemas, tanto em ambientes Windows como Linux, e habilidades em gerenciamento de projetos utilizando metodologias ágeis como Scrum. Além disso, possuo sólidos conhecimentos em GitLab, tanto em sua utilização quanto em sua administração.</p>
+                        
+                        <p>Minha paixão por tecnologia me levou a desenvolver um conhecimento profundo tanto em Hardware quanto em Software, o que me permite ter uma visão ampla sobre os desafios enfrentados na área de TI.</p>
+                        
+                        <p>Ademais, acredito que o trabalho em equipe é essencial para o sucesso em projetos de tecnologia, por isso valorizo a comunicação clara e a colaboração em equipe. Estou comprometida em me manter atualizada com as novas tendências e tecnologias da área, sempre buscando aprender e aplicar novos conhecimentos em meus projetos.</p>
+                        
+                        <p><strong>Atualmente sou Oficial da Força Aérea Brasileira</strong>, trabalhando no Centro de Computação da Aeronáutica de São José dos Campos na Seção de Desenvolvimento de Sistemas - SDDM.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- SEÇÃO 2: COMPETÊNCIAS -->
+    <section id="competencias">
+        <div class="section-banner" style="background-image: url('./img1/banner2.jpg');">
+            <div class="section-title">
+                <h1>COMPETÊNCIAS</h1>
+            </div>
+        </div>
+        
+        <div class="servicos">
+            <div class="titulo">
+                <p>COMPETÊNCIAS</p>
+                <div class="intro">
+                    <p>Abaixo as competências adquiridas ao longo da minha carreira na área de TI.</p>
+                    <div class="center">
+                        <section class="w33">
+                            <div class="serv">
+                                <div class="icone">
+                                    <img src="./icon/analista.png" width="85%" alt="Analista de Sistemas">
+                                </div>
+                                <div class="subtitulo">
+                                    <p>Analista de Sistemas</p>
+                                </div>
+                                <div class="txt">
+                                    <p>Atuação na análise de requisitos, levantamento de necessidades do usuário/cliente, documentação funcional e apoio ao desenvolvimento de sistemas, garantindo soluções alinhadas aos objetivos do negócio e às regras técnicas.</p>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="w33">
+                            <div class="serv">
+                                <div class="icone">
+                                    <img src="./icon/web-design.png" width="90%" alt="Designer">
+                                </div>
+                                <div class="subtitulo">
+                                    <p>Designer</p>
+                                </div>
+                                <div class="txt">
+                                    <p>Criação de soluções visuais com foco em materiais digitais e impressos. Realização de diversas tarefas como a montagem da comunicação visual de marcas, criando propagandas, convites, adesivos, panfletos, anúncios, entre outras peças.</p>
+                                </div>
+                            </div>    
+                        </section>
+                        <section class="w33">
+                            <div class="serv">
+                                <div class="icone">
+                                    <img src="./icon/scrum.png" width="85%" alt="Scrum Master">        
+                                </div>
+                                <div class="subtitulo">
+                                    <p>Scrum Master</p>
+                                </div>
+                                <div class="txt">
+                                    <p>Atuação na facilitação do framework Scrum, promovendo a organização do time, remoção de impedimentos, condução de cerimônias ágeis e apoio à melhoria contínua dos processos e da colaboração da equipe</p>
+                                </div>
+                            </div>    
+                        </section>
+                        <section class="w33">
+                            <div class="serv">
+                                <div class="icone">
+                                    <img src="./icon/front-end.png" width="90%" alt="Front-end">
+                                </div>
+                                <div class="subtitulo">
+                                    <p>Desenvolvedor Front-End</p>
+                                </div>
+                                <div class="txt">
+                                    <p>Desenvolvimento de interfaces web responsivas e funcionais, utilizando HTML, CSS e JavaScript, com foco em usabilidade, organização do código e boa experiência do usuário.</p>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="w33">
+                            <div class="serv">
+                                <div class="icone">
+                                    <img src="./icon/back-end.png" width="100%" alt="Back-end">
+                                </div>
+                                <div class="subtitulo">
+                                    <p>Desenvolvedor Back-End</p>
+                                </div>
+                                <div class="txt">
+                                    <p>Atuação no desenvolvimento da lógica de sistemas, criação e manutenção de funcionalidades do servidor, organização de dados e integração entre aplicações, garantindo desempenho, segurança e funcionamento adequado dos sistemas.</p>
+                                </div>
+                            </div>    
+                        </section>
+                        <section class="w33">
+                            <div class="serv">
+                                <div class="icone">
+                                    <img src="./icon/ferramentas.png" width="80%" alt="Testes">
+                                </div>
+                                <div class="subtitulo">
+                                    <p>Analista de Teste de Software</p>
+                                </div>
+                                <div class="txt">
+                                    <p>Atuação no planejamento, execução e registro de testes de software, identificação de falhas, validação de requisitos e garantia da qualidade das aplicações, contribuindo para a entrega de sistemas confiáveis e funcionais.</p>
+                                </div>
+                            </div>    
+                        </section>
+                    </div>
+                    <div class="clear"></div>
+                </div>    
+            </div>        
+        </div>
+    </section>
+    
+    <!-- SEÇÃO 3: EDUCAÇÃO -->
+    <section id="educacao">
+        <div class="section-banner" style="background-image: url('./img1/banner3.jpg');">
+            <div class="section-title">
+                <h1>EDUCAÇÃO</h1>
+            </div>
+        </div>
+        
+        <div class="servicos">
+            <div class="titulo">
+                <p>EDUCAÇÃO</p>
+                <div class="intro">
+                    <p>Cursos e certificações adquiridos ao longo da minha trajetória na área de TI.</p>
+                    <div class="centeredu">
+                        <section class="w33">
+                            <div class="servedu">
+                                <div class="iconeedu">
+                                    <img src="./icon/novobrasao-virtual-2025.png" width="100%" alt="PUC Minas">        
+                                </div>
+                                <div class="subtituloedu">
+                                    <p>Engenharia de Requisitos</p>
+                                </div>
+                                <div class="txtedu">
+                                    <p>Neste curso, aprimorei minhas técnicas e processos usados na Engenharia de Software, mais especificamente no Levantamento, Detalhamento, Priorização na Verificação e Validação dos Requisitos.</p>
+                                </div>
+                            </div>    
+                        </section>
+                        <section class="w33">
+                            <div class="servedu">
+                                <div class="iconeedu">
+                                    <img src="./icon/psmii.png" width="90%" alt="PSM II">        
+                                </div>
+                                <div class="subtituloedu">
+                                    <p>Professional Scrum Master II</p>
+                                </div>
+                                <div class="txtedu">
+                                    <p>A certificação Professional Scrum Master™ II (PSM II) valida a minha capacidade como Scrum Master de aplicar o framework Scrum, de apoiar equipes Scrum e resolver problemas complexos. Além de comprovar o meu conhecimento avançado da Metodologia Scrum.</p>
+                                </div>
+                            </div>    
+                        </section>
+                        <section class="w33">
+                            <div class="servedu">
+                                <div class="iconeedu">
+                                    <img src="./icon/psmi.png" width="90%" alt="PSM I">        
+                                </div>
+                                <div class="subtituloedu">
+                                    <p>Professional Scrum Master I</p>
+                                </div>
+                                <div class="txtedu">
+                                    <p>A certificação Professional Scrum Master™ I (PSM I) valida o meu conhecimento da Metodologia Scrum, das responsabilidades do Scrum Master e de como aplicar o Scrum.</p>
+                                </div>
+                            </div>    
+                        </section>
+                        <section class="w33">
+                            <div class="servedu">
+                                <div class="iconeedu">
+                                    <img src="./icon/unilestemg.jpg" width="90%" alt="Unileste">
+                                </div>
+                                <div class="subtituloedu">
+                                    <p>Sistemas de Informação</p>
+                                </div>
+                                <div class="txtedu">
+                                    <p>Através desse curso fiquei pronta para o mercado de trabalho, sendo uma profissional capaz de desenvolver projetos e aplicativos que envolvem arquitetura e engenharia de software, com a utilização de softwares atualizados e de alto desempenho.</p>                
+                                </div>
+                            </div>    
+                        </section>
+                        <section class="w33">
+                            <div class="servedu">
+                                <div class="iconeedu">
+                                    <img src="./icon/senaifiemg.png" width="90%" alt="SENAI">
+                                </div>
+                                <div class="subtituloedu">
+                                    <p>Redes de Computadores</p>
+                                </div>
+                                <div class="txtedu">
+                                    <p>O curso de Redes do SENAI permitiu o aprimoramento de habilidades aprendidas no curso técnico, tornando-me capaz de instalar e manter infraestruturas físicas de Tecnologia da Informação, tais como, sistemas operacionais, servidores e equipamentos ativos de rede.</p>                
+                                </div>
+                            </div>    
+                        </section>
+                        <section class="w33">
+                            <div class="servedu">
+                                <div class="iconeedu">
+                                    <img src="./icon/jk.png" width="113%" alt="JK">
+                                </div>
+                                <div class="subtituloedu">
+                                    <p>Técnico em Informática</p>
+                                </div>
+                                <div class="txtedu">
+                                    <p>O Cursos Técnico em Informática me formou como profissional para desempenhar atividades ligadas a montagem e manutenção de microcomputadores, instalação e configuração de redes, desenvolvimento de sistemas e websites.</p>          
+                                </div>
+                            </div>    
+                        </section>
+                        <section class="w33">
+                            <div class="servedu">
+                                <div class="iconeedu">
+                                    <img src="./icon/fundacaobradesco.png" width="95%" alt="Fundação Bradesco">
+                                </div>
+                                <div class="subtituloedu">
+                                    <p>HTML Avançado</p>
+                                </div>
+                                <div class="txtedu">
+                                    <p>Curso de HTML Avançado com foco no uso de elementos semânticos, formulários, tabelas, multimídia e boas práticas de acessibilidade e organização do código, preparando para o desenvolvimento de páginas web mais estruturadas e profissionais.</p>                
+                                </div>
+                            </div>    
+                        </section>
+                        <section class="w33">
+                            <div class="servedu">
+                                <div class="iconeedu">
+                                    <img src="./icon/fundacaobradesco.png" width="95%" alt="Fundação Bradesco">        
+                                </div>
+                                <div class="subtituloedu">
+                                    <p>HTML Básico</p>
+                                </div>
+                                <div class="txtedu">
+                                    <p>Curso de HTML Básico com foco na estruturação de páginas web. Abordou conceitos fundamentais da linguagem HTML, uso de tags, atributos, links, imagens, listas e boas práticas, preparando para a criação de páginas simples e para o aprendizado de CSS e JavaScript.</p>
+                                </div>
+                            </div>    
+                        </section>
+                        <section class="w33">
+                            <div class="servedu">
+                                <div class="iconeedu">
+                                    <img src="./icon/fundacaobradesco.png" width="95%" alt="Fundação Bradesco">
+                                </div>
+                                <div class="subtituloedu">
+                                    <p>JavaScript</p>
+                                </div>
+                                <div class="txtedu">
+                                    <p>Curso com foco nos conceitos básicos da linguagem, incluindo lógica de programação, variáveis, operadores, funções, estruturas de decisão e repetição, possibilitando a compreensão dos fundamentos e o desenvolvimento de scripts simples para páginas web.</p>                
+                                </div>
+                            </div>    
+                        </section>
+                        <section class="w33">
+                            <div class="servedu">
+                                <div class="iconeedu">
+                                    <img src="./icon/fundacaobradesco.png" width="95%" alt="Fundação Bradesco">
+                                </div>
+                                <div class="subtituloedu">
+                                    <p>Java Básico</p>
+                                </div>
+                                <div class="txtedu">
+                                    <p>Curso com foco nos fundamentos da linguagem, abordando lógica de programação, tipos de dados, variáveis, operadores, estruturas de decisão e repetição, métodos e conceitos iniciais de orientação a objetos, preparando para o desenvolvimento de aplicações simples.</p>                
+                                </div>
+                            </div>    
+                        </section>
+                        <section class="w33">
+                            <div class="servedu">
+                                <div class="iconeedu">
+                                    <img src="./icon/fundacaobradesco.png" width="95%" alt="Fundação Bradesco">        
+                                </div>
+                                <div class="subtituloedu">
+                                    <p>Designer Gráfico</p>
+                                </div>
+                                <div class="txtedu">
+                                    <p>Curso com foco nos fundamentos do design visual, abordando princípios de composição, tipografia, cores, identidade visual e uso de ferramentas básicas, preparando para a criação de peças gráficas digitais e impressas.</p>
+                                </div>
+                            </div>    
+                        </section>
+                    </div>
+                    <div class="clear"></div>
+                </div>    
+            </div>        
+        </div>
+    </section>
+    
+    <!-- SEÇÃO 4: CARREIRA -->
+    <section id="carreira">
+        <div class="section-banner" style="background-image: url('./img1/banner4.jpg');">
+            <div class="section-title">
+                <h1>CARREIRA PROFISSIONAL</h1>
+            </div>
+        </div>
+        
+        <div class="servicos">
+            <div class="titulo">
+                <p>CARREIRA PROFISSIONAL</p>
+                <div class="intro">
+                    <p>Minha trajetória profissional na área de Tecnologia da Informação.</p>
+                    <div class="center">
+                        <!-- Card 1: Força Aérea Brasileira -->
+                        <section class="w33">
+                            <a href="./carreira/fab.html" class="card-link">
+                                <div class="serv">
+                                    <div class="icone">
+                                        <img src="./icon/aeronave.png" alt="Força Aérea Brasileira">
+                                    </div>
+                                    <div class="subtitulo">
+                                        <p>Força Aérea Brasileira</p>
+                                    </div>
+                                    <div class="txt">
+                                        <p><em>01/2022 - Atual</em></p>
+                                        <p>Analista de Sistemas e Scrum Master no Centro de Computação da Aeronáutica de São José dos Campos, atuando em projetos de TI com metodologias ágeis.</p>
+                                    </div>
+                                    <div class="ver-mais">
+                                        <span>Ver detalhes →</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </section>
+                        
+                        <!-- Card 2: Hospital Dr. José Maria Morais -->
+                        <section class="w33">
+                            <a href="./carreira/hospital.html" class="card-link">
+                                <div class="serv">
+                                    <div class="icone">
+                                        <img src="./icon/hospital.png" alt="Hospital">
+                                    </div>
+                                    <div class="subtitulo">
+                                        <p>Hospital HJMM PMCF</p>
+                                    </div>
+                                    <div class="txt">
+                                        <p><em>07/2020 - 09/2020</em></p>
+                                        <p>Técnico em Informática responsável pelo setor de TI, prestando suporte integral aos usuários e manutenção de infraestrutura.</p>
+                                    </div>
+                                    <div class="ver-mais">
+                                        <span>Ver detalhes →</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </section>
+                        
+                        <!-- Card 3: Colégio Angélica -->
+                        <section class="w33">
+                            <a href="./carreira/colegio-angelica.html" class="card-link">
+                                <div class="serv">
+                                    <div class="icone">
+                                        <img src="./icon/educacao.png" alt="Educação">
+                                    </div>
+                                    <div class="subtitulo">
+                                        <p>Colégio Angélica</p>
+                                    </div>
+                                    <div class="txt">
+                                        <p><em>07/2017 - 03/2020</em></p>
+                                        <p>Técnico em Informática e Professora de Informática, gerenciando infraestrutura de TI e ministrando aulas para alunos e funcionários.</p>
+                                    </div>
+                                    <div class="ver-mais">
+                                        <span>Ver detalhes →</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </section>
+                        
+                        <!-- Card 4: Colégio Tiradentes -->
+                        <section class="w33">
+                            <a href="./carreira/ctpm.html" class="card-link">
+                                <div class="serv">
+                                    <div class="icone">
+                                        <img src="./icon/graduacao.png" alt="Administrativo">
+                                    </div>
+                                    <div class="subtitulo">
+                                        <p>CTPM MG</p>
+                                    </div>
+                                    <div class="txt">
+                                        <p><em>05/2016 - 12/2016</em></p>
+                                        <p>Auxiliar Administrativo no Colégio Tiradentes da Polícia Militar, realizando atendimento ao público e organização documental.</p>
+                                    </div>
+                                    <div class="ver-mais">
+                                        <span>Ver detalhes →</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </section>
+                        
+                        <!-- Card 5: AR-Web Sistemas -->
+                        <section class="w33">
+                            <a href="./carreira/arweb.html" class="card-link">
+                                <div class="serv">
+                                    <div class="icone">
+                                        <img src="./icon/codificacao-da-web.png" alt="Suporte Técnico">
+                                    </div>
+                                    <div class="subtitulo">
+                                        <p>AR-Web Sistemas</p>
+                                    </div>
+                                    <div class="txt">
+                                        <p><em>01/2014 - 11/2014</em></p>
+                                        <p>Auxiliar de Suporte Técnico, realizando testes de sistemas, análise de requisitos e elaboração de documentação técnica.</p>
+                                    </div>
+                                    <div class="ver-mais">
+                                        <span>Ver detalhes →</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </section>
+                    </div>
+                    <div class="clear"></div>
+                </div>    
+            </div>        
+        </div>
+    </section>
+    
+    <!-- SEÇÃO 5: CONTATO -->
+    <section id="contato">
+        <div class="section-banner" style="background-image: url('./img1/banner5.jpg');">
+            <div class="section-title">
+                <h1>CONTATO</h1>
+            </div>
+        </div>
+            <div class="contato-container">
+                <!-- Bloco Esquerdo - Informações -->
+                <div class="contato-info">
+                    <h2>Maria Carolina Pereira de Sales</h2>
+                    <p class="cidade">São José dos Campos - SP</p>
+                    
+                    <div class="redes-sociais">
+                        <a href="https://wa.me/5531987899608" target="_blank" title="WhatsApp">
+                            <img src="./icon/whatsapp.png" alt="WhatsApp">
+                        </a>
+                        <a href="https://www.linkedin.com/in/mariacpsales/" target="_blank" title="LinkedIn">
+                            <img src="./icon/linkedin.png" alt="LinkedIn">
+                        </a>
+                        <a href="https://www.instagram.com/mariacpsales/" target="_blank" title="Instagram">
+                            <img src="./icon/instagram.png" alt="Instagram">
+                        </a>
+                        <a href="https://www.facebook.com/mariacarolina.pereiradesales/" target="_blank" title="Facebook">
+                            <img src="./icon/facebook.png" alt="Facebook">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCWM0zUocCJCVWc5_E2ZIMjQ" target="_blank" title="YouTube">
+                            <img src="./icon/youtube1.png" alt="YouTube">
+                        </a>
+                        <a href="mailto:mariacpsales@hotmail.com" title="E-mail">
+                            <img src="./icon/email.png" alt="E-mail">
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Bloco Direito - Formulário -->
+                <div class="contato-form">
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="form-group">
+                            <label for="nome">Nome*</label>
+                            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Seu email*</label>
+                            <input type="email" id="email" name="email" placeholder="Seu endereço de email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem*</label>
+                            <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="copyright">
+            <p>©2026, Maria Carolina Pereira de Sales. Todos os direitos reservados.<br>
+            All Rights Reserved. Desenvolvido por MCPS.</p>
+        </div>
+    </footer>
+    
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="./js/menu.js"></script>
+    <script>
+        // Script para ativar indicador ao rolar
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section:not(.w33)');
+            const indicators = document.querySelectorAll('.scroll-indicator a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            indicators.forEach(indicator => {
+                indicator.cl

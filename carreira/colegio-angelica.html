@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maria Carolina - Experiência no Colégio Angélica">
+    <title>Colégio Angélica - Maria Carolina</title>
+    
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="../icon/notebook.png" type="image/png">
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .page-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 160px 40px 80px;
+        }
+        
+        .voltar {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .voltar:hover {
+            color: #000;
+            gap: 12px;
+        }
+        
+        .empresa-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .empresa-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+        }
+        
+        .empresa-icon img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .empresa-header h1 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+        
+        .empresa-header .local {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        
+        .empresa-header .periodo-geral {
+            color: #333;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .cargo-section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background: #fafafa;
+            border-left: 4px solid #333;
+        }
+        
+        .cargo-section h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 5px;
+        }
+        
+        .cargo-section .cargo-periodo {
+            color: #666;
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .cargo-section h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+            margin: 20px 0 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cargo-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .cargo-section li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.7;
+        }
+        
+        .cargo-section li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .tecnologias {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .tecnologias span {
+            background: #333;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        @media (max-width: 768px) {
+            .page-content {
+                padding: 140px 20px 60px;
+            }
+            
+            .empresa-header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .cargo-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Fixo -->
+    <header>
+        <div class="menu">
+            <div class="logo">
+                <p>MARIA CAROLINA PEREIRA DE SALES</p>
+            </div>
+            <div class="cv-download">
+                <a href="../docs/CV-MARIA-CAROLINA-PT.pdf" target="_blank" title="Baixar Currículo em Português">
+                    <img src="../icon/cv.png" alt="CV Português">
+                    <span>PT</span>
+                </a>
+                <a href="../docs/CV-MARIA-CAROLINA-EN.pdf" target="_blank" title="Baixar Currículo em Inglês">
+                    <img src="../icon/cv.png" alt="CV English">
+                    <span>EN</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#sobre">SOBRE</a></li>
+                    <li><a href="../index.html#competencias">COMPETÊNCIAS</a></li>
+                    <li><a href="../index.html#educacao">EDUCAÇÃO</a></li>
+                    <li><a href="../index.html#carreira">CARREIRA</a></li>
+                    <li><a href="../index.html#contato">CONTATO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="page-content">
+        <a href="../index.html#carreira" class="voltar">← Voltar para Carreira</a>
+        
+        <div class="empresa-header">
+            <div class="empresa-icon">
+                <img src="../icon/educacao.png" alt="Educação">
+            </div>
+            <h1>Colégio Angélica</h1>
+            <p class="local">Coronel Fabriciano/MG</p>
+            <p class="periodo-geral">Julho 2017 - Março 2020</p>
+        </div>
+        
+        <!-- Cargo 1: Técnico em Informática -->
+        <div class="cargo-section">
+            <h2>Técnico em Informática</h2>
+            <p class="cargo-periodo">Julho 2017 - Março 2020</p>
+            
+            <h3>Principais Atividades</h3>
+            <ul>
+                <li>Gerenciamento de toda a infraestrutura de TI para mais de 350 usuários (alunos e funcionários)</li>
+                <li>Planejamento e execução de projetos que modernizaram o sistema educacional</li>
+                <li>Suporte técnico contínuo a todos os usuários da instituição</li>
+                <li>Configuração de redes e manutenção de equipamentos</li>
+                <li>Preparação de ambientes para as aulas práticas</li>
+                <li>Treinamento de usuários em ferramentas e sistemas</li>
+            </ul>
+            
+            <h3>Tecnologias e Ferramentas</h3>
+            <div class="tecnologias">
+                <span>Windows</span>
+                <span>Linux</span>
+                <span>Redes</span>
+                <span>Hardware</span>
+                <span>Suporte Técnico</span>
+            </div>
+        </div>
+        
+        <!-- Cargo 2: Professora de Informática -->
+        <div class="cargo-section">
+            <h2>Professora de Informática</h2>
+            <p class="cargo-periodo">Setembro 2017 - Julho 2019</p>
+            
+            <h3>Principais Atividades</h3>
+            <ul>
+                <li>Elaboração de material didático para aulas de informática</li>
+                <li>Condução de aulas práticas em laboratório</li>
+                <li>Ministração de aulas teóricas sobre conceitos de tecnologia</li>
+                <li>Acompanhamento do desenvolvimento dos alunos</li>
+                <li>Preparação de exercícios e avaliações</li>
+            </ul>
+            
+            <h3>Áreas de Ensino</h3>
+            <div class="tecnologias">
+                <span>Informática Básica</span>
+                <span>Pacote Office</span>
+                <span>Internet</span>
+                <span>Digitação</span>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="copyright">
+            <p>© 2024, Maria Carolina Pereira de Sales. Todos os direitos reservados.<br>
+            All Rights Reserved. Desenvolvido por MCPS.</p>
+        </div>
+    </footer>
+</body>
+</html>
